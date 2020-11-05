@@ -1,0 +1,51 @@
+<!-- Body Start -->
+	<div class="wrapper">
+		<div class="gambo-Breadcrumb">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+								<li class="breadcrumb-item active" aria-current="page">Order Placed</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="all-product-grid">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-lg-6 col-md-8">
+						<div class="order-placed-dt">
+							<i class="uil uil-check-circle icon-circle"></i>
+							<h2>Order Successfully Placed</h2>
+							<p>Thank you for your order!  </p>
+							<div class="delivery-address-bg">
+								<div class="title585">
+									<div class="pln-icon"><i class="uil uil-telegram-alt"></i></div>
+									<h4>Your order will be sent to this address</h4>
+								</div>
+								<ul class="address-placed-dt1">
+									<%for(var i=0;i<user.address.length;i++){%>
+										
+									<li><p><i class="uil uil-map-marker-alt"></i>Address :<span><%=cart.%></span></p></li>
+									<li><p><i class="uil uil-phone-alt"></i>Phone Number :<span>+91<%=user.phone%></span></p></li>
+									<li><p><i class="uil uil-envelope"></i>Email Address :<span><%=user.emailaddress%></span></p></li>
+									<li><p><i class="uil uil-card-atm"></i>Payment Method :<span>Cash on Delivery</span></p></li>
+								<%}%>
+								</ul>
+								<div class="stay-invoice">
+									<div class="st-hm">Stay Home<i class="uil uil-smile"></i></div>
+									<a href="#" class="invc-link hover-btn">invoice</a>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</div>
+	<!-- Body End -->

@@ -1,0 +1,85 @@
+<div id="layoutSidenav">
+
+	<div id="layoutSidenav_content">
+
+		<main>
+			<div class="container-fluid">
+				<h2 class="mt-30 page-title">Payment Setting</h2>
+				<ol class="breadcrumb mb-30">
+					<li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+					<li class="breadcrumb-item active">Payment Setting</li>
+				</ol>
+				<div class="row">
+					<div class="col-lg-4 col-md-6">
+						<div class="left-side-tabs">
+							<div class="dashboard-left-links">
+								<a href="/admin/payment_setting" class="user-item active"><i
+										class="fab fa-paypal"></i>Paytm</a>
+								<!-- <a href="/admin/payment-setting-strip" class="user-item"><i class="fab fa-stripe"></i>Stripe</a> -->
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-8 col-md-6">
+						<div class="card card-static-2 mb-30">
+							<div class="card-title-2">
+								<h4>Paytm Setting</h4>
+							</div>
+							<div class="card-body-table">
+								<div class="news-content-right pd-20">
+									<div class="row">
+										<div class="col-lg-12">
+											<form action="/admin/payment-setting" method="POST">
+
+												<div class="form-group">
+													<label class="form-label">MerchantId *</label>
+													<input type="text" class="form-control" value="<%=setting.merchantId%>"
+														name="merchantId" placeholder="Enter paypal email">
+												</div>
+												<div class="form-group">
+													<label class="form-label">Website*</label>
+													<input type="text" class="form-control" name="website"
+														value="<%=setting.website%>" placeholder="Enter paypal email">
+												</div>
+												<div class="form-group">
+													<label class="form-label">Industry Type*</label>
+													<input type="text" class="form-control" name="industryType"
+														value="<%=setting.industryType%>" placeholder="Enter paypal email">
+												</div>
+												<div class="form-group">
+													<label class="form-label">Callback Url*</label>
+													<input type="text" class="form-control" name="callbackUrl"
+														value="<%=setting.callbackUrl%>" placeholder="Enter paypal email">
+												</div>
+												<div class="form-group">
+													<label class="form-label">Transaction Url*</label>
+													<input type="text" class="form-control" name="transactionUrl"
+														value="<%=setting.transactionUrl%>"
+														placeholder="Enter paypal email">
+												</div>
+												<div class="form-group">
+													<label class="form-label">Merchant Key*</label>
+													<input type="text" class="form-control" name="merchantKey"
+														value="<%=setting.merchantKey%>" placeholder="Enter paypal email">
+												</div>
+												<div class="form-group">
+													<label class="form-label">Channel Id*</label>
+													<input type="text" class="form-control" name="channelId"
+														value="<%=setting.channelId%>" placeholder="Enter paypal email">
+												</div>
+
+
+												<button class="save-btn hover-btn" type="submit">Save Changes</button>
+											</form>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+	</main>
+</div>
+</div>

@@ -1,0 +1,86 @@
+<div id="layoutSidenav">
+
+    <div id="layoutSidenav_content">
+
+<main>
+          <div class="container-fluid">
+              <h2 class="mt-30 page-title">Offers</h2>
+              <ol class="breadcrumb mb-30">
+                  <li class="breadcrumb-item"><a href="/admin/">Dashboard</a></li>
+                  <li class="breadcrumb-item"><a href="/offers">Offers</a></li>
+                  <li class="breadcrumb-item active">Add Offer</li>
+              </ol>
+              <div class="row">
+                  <div class="col-lg-6 col-md-6">
+                      <div class="card card-static-2 mb-30">
+                          <div class="card-title-2">
+                              <h4>Add New Offer</h4>
+                          </div>
+                          <form method="POST" action="/admin/edit-offer/<%= list.id %> " enctype="multipart/form-data">
+                          <div class="card-body-table">
+                              <div class="news-content-right pd-20">
+                                  <div class="form-group">
+                                      <label class="form-label">Title*</label>
+                                      <input type="text" class="form-control" name="title"value="<%=list.title%>" placeholder="Offer Title">
+                                  </div>
+                                  <div class="form-group">
+                                      <label class="form-label">Discount MRP*</label>
+                                      <input type="text" name="discount" class="form-control" value="<%=list.discount%>" placeholder="$0">
+                                  </div>
+                                  <div class="form-group">
+                                      <label class="form-label">Add Products*</label>
+                                      <input type="text" name="addproduct" value="<%=list.addproduct%>" class="form-control" placeholder="add product">
+                                       <!-- <select class="form-control select" multiple>
+                                          <option value="1">Product Name 1</option>
+                                          <option value="2">Product Name 2</option>
+                                          <option value="3">Product Name 3</option>
+                                          <option value="4">Product Name 4</option>
+                                          <option value="5">Product Name 5</option>
+                                          <option value="6">Product Name 6</option>
+                                          <option value="7">Product Name 7</option>
+                                          <option value="8">Product Name 8</option>
+                                          <option value="9">Product Name 9</option>
+                                          <option value="10">Product Name 10</option>
+                                          <option value="11">Product Name 11</option>
+                                          <option value="12">Product Name 12</option>
+                                      </select>  -->
+                                  </div>
+                                  <div class="form-group">
+                                      <label class="form-label">Status*</label>
+                                      <select id="status" name="status" value="<%=list.status%>" class="form-control">
+                                          <option selected>Active</option>
+                                          <option >Inactive</option>
+                                      </select>
+                                  </div>
+                                  <div class="form-group">
+                                      <label class="form-label">Offer Image*</label>
+                                      <div class="input-group">
+                                          <div class="custom-file">
+                                              <input type="file" name="offerimage"  class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
+                                              <label class="custom-file-label" for="inputGroupFile04">Choose Image</label>
+                                          </div>
+                                      </div>
+                                      <div class="offer-img mt-3">
+                                          <img src="/uploads/<%=list.offerimage%>" alt="">
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label class="form-label">Description*</label>
+                                      <div class="card card-editor">
+                                          <div class="content-editor">
+                                              <textarea class="text-control" value="<%=list.description%>" placeholder="" name="description"><%=list.description%></textarea>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <button class="save-btn hover-btn" type="submit">Add New Offer</button>
+                              </div> 
+                          </div>
+                      </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </main>
+    </div>
+</div>
+     

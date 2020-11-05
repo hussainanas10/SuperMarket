@@ -1,0 +1,92 @@
+<!-- Body Start -->
+	<div class="wrapper">
+		<div class="gambo-Breadcrumb">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="/">Home</a></li>
+								<li class="breadcrumb-item active" aria-current="page">User Dashboard</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="dashboard-group">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="user-dt">
+							<div class="user-img">
+								<img src="/uploads/<%=user.images%>" alt="">
+								
+							</div>
+							<h4><%=user.username%></h4>
+							<p>+91<%=user.phone%></p>
+							<!-- <div class="earn-points"><img src="/images/Dollar.svg" alt="">Points : <span>20</span></div> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<div class="">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-4">
+						<div class="left-side-tabs">
+							<div class="dashboard-left-links">
+								<!-- <a href="/dashboard_overview" class="user-item"><i class="uil uil-apps"></i>Overview</a> -->
+								<a href="/dashboard_my_orders" class="user-item"><i class="uil uil-box"></i>My Orders</a>
+								<!-- <a href="/dashboard_my_rewards" class="user-item"><i class="uil uil-gift"></i>My Rewards</a>
+								<a href="/dashboard_my_wallet" class="user-item"><i class="uil uil-wallet"></i>My Wallet</a> -->
+								<a href="/dashboard_my_wishlist" class="user-item"><i class="uil uil-heart"></i>Shopping Wishlist</a>
+								<a href="/dashboard_my_addresses" class="user-item active"><i class="uil uil-location-point"></i>My Address</a>
+								<a href="/edit-profile" class="user-item"><i class="uil uil-edit"></i>Edit-Profile</a>
+								<a href="/logout" class="user-item"><i class="uil uil-exit"></i>Logout</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-9 col-md-8">
+						<div class="dashboard-right">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="main-title-tab">
+										<h4><i class="uil uil-location-point"></i>My Address</h4>
+									</div>
+								</div>
+								<div class="col-lg-12 col-md-12">
+									<div class="pdpt-bg">
+										<div class="pdpt-title">
+											<h4>My Address</h4>
+										</div>
+										<div class="address-body">
+											<a href="/address" class="add-address hover-btn" >Add New Address</a>
+											<%for(var i=0;i<user.address.length;i++){%>
+											<div class="address-item">
+												<div class="address-icon1">
+													<i class="uil uil-home-alt"></i>
+												</div>
+												<div class="address-dt-all">
+													<h4>Home</h4>
+													<p><%=user.address[i].addressfullname%>,<%=user.address[i].flatnumber%>,<%=user.address[i].colony%>,<%=user.address[i].landmark%>,<%=user.address[i].city%>,<%=user.address[i].state%>,<%=user.address[i].country%>,<%=user.address[i].addressphone%>,<%=user.address[i].pin%></p>
+													<ul class="action-btns">
+														<li><a href="/edit-address/<%=i%>" class="action-btn"><i class="uil uil-edit"></i></a></li>
+														<!-- <li><a href="/delete/address/ " class="action-btn"><i class="uil uil-trash-alt"></i></a></li> -->
+													</ul>
+												</div>
+											</div>
+											<%}%>
+											
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</div>	
+		</div>	
+	</div>
+	<!-- Body End -->

@@ -1,0 +1,129 @@
+<div id="layoutSidenav">
+
+	<div id="layoutSidenav_content">
+
+		<main>
+
+			<div class="container-fluid">
+				<h2 class="mt-30 page-title">Products</h2>
+				<ol class="breadcrumb mb-30">
+					<li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
+					<li class="breadcrumb-item"><a href="/admin/products">Products</a></li>
+					<li class="breadcrumb-item active">Add Product</li>
+				</ol>
+				<form action="/admin/edit-products/<%= list.id %> " method="POST" enctype="multipart/form-data">
+					<div class="row">
+						<div class="col-lg-6 col-md-6">
+							<div class="card card-static-2 mb-30">
+								<div class="card-title-2">
+									<h4>Add New Product</h4>
+								</div>
+								<div class="card-body-table">
+									<div class="news-content-right pd-20">
+
+										<div class="form-group">
+											<label class="form-label">Name*</label>
+											<input type="text" class="form-control" placeholder="Product Name"
+												name="productname" value="<%=list.productname%>">
+										</div>
+										<div class="form-group">
+											<label class="form-label">Category*</label>
+											<select id="categtory" name="category" class="form-control"
+												value="<%=list.category%>">
+												<option selected>--Select Category--</option>
+												<% for( var i=0;i<categorys.length;i++) {%>
+												<option><%=categorys[i].cname%></option>
+												<%}%>
+											</select>
+										</div>
+										<div class="form-group">
+											<label class="form-label">MRP*</label>
+											<input type="text" class="form-control" placeholder="Rs0" name="price"
+												value="<%=list.price%>">
+										</div>
+										<div class="form-group">
+											<label class="form-label">Discount MRP*</label>
+											<input type="text" class="form-control" placeholder="Rs0" name="discountmrp"
+												value="<%=list.discountmrp%>">
+										</div>
+
+										<div class="form-group">
+											<label class="form-label">Discount*</label>
+											<input type="text" class="form-control" placeholder="Rs0" name="discount"
+												value="<%=list.discount%>">
+										</div>
+										<div class="form-group">
+											<label class="form-label">Benefits*</label>
+											<input type="text" class="form-control" placeholder="" name="benefits"
+												value="<%=list.beefits%>">
+										</div>
+										<div class="form-group">
+											<label class="form-label">How to Use*</label>
+											<input type="text" class="form-control" placeholder="" name="howtouse"
+												value="<%=list.howtouse%>">
+										</div>
+										<div class="form-group">
+											<label class="form-label">Seller*</label>
+											<input type="text" class="form-control"
+												placeholder="Gambolthemes Pvt Ltd, Sks Nagar, Near Mbd Mall, Ludhana, 141001"
+												name="seller" value="<%=list.seller%>">
+										</div>
+										<div class="form-group">
+											<label class="form-label">Disclaimer*</label>
+											<input type="text" class="form-control" placeholder="" name="disclaimer"
+												value="<%=list.disclaimer%>">
+										</div>
+										<div class="form-group">
+											<label class="form-label">Status*</label>
+											<select id="status" name="status" class="form-control"
+												value="<%=list.status%>">
+												<option selected>Active</option>
+												<option value="Inactive">Inactive</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label class="form-label">Description*</label>
+											<div class="card card-editor">
+												<div class="content-editor">
+													<textarea class="text-control" name="description"
+														value=""
+														placeholder=""><%=list.description%></textarea>
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="form-label">Product Image*</label>
+											<div class="input-group">
+												<div class="custom-file">
+													<input type="file" class="custom-file-input" name="images"
+														value="<%=list.images%>" id="inputGroupFile05"
+														aria-describedby="inputGroupFileAddon05" accept="image/*"
+														multiple />
+													<label class="custom-file-label" for="inputGroupFile05">Choose
+														Image</label>
+												</div>
+											</div>
+											<ul class="add-produc-imgs">
+												<% for(var i=0;i < list.images.length;i++ ) {%>
+												<li>
+													<div class="add-cate-img-1">
+														<img src="/uploads/<%=list.images[i]%>" alt="">
+													</div>
+												</li>
+												<%}%>
+													</ul>
+												</div>
+
+										<button class="save-btn hover-btn" type="submit">Add New Product</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</form>
+			</div>
+
+		</main>
+	</div>
+</div>

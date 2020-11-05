@@ -1,0 +1,151 @@
+               <div id="layoutSidenav">
+
+	          <div id="layoutSidenav_content">
+    
+			 <main>
+                    <div class="container-fluid">
+                        <h2 class="mt-30 page-title">All Reports</h2>
+                        <ol class="breadcrumb mb-30">
+                            <li class="breadcrumb-item"><a href="/admin/home">Dashboard</a></li>
+                            <li class="breadcrumb-item active">All Report</li>
+                        </ol>
+						<div class="row">
+							
+							<div class="col-lg-8 col-md-7">
+								<div class="all-cate-tags">
+									<div class="row">										
+										<div class="col-lg-12 col-md-12">
+											<div class="card card-static-2 mb-30">
+												<div class="card-title-2">
+													<h4>Orders Per Year</h4>
+												</div>
+												<div class="card-body-table">
+													<div class="table-responsive">
+														<table class="table ucp-table table-hover" id="ordersmonth">
+															<thead>
+																<tr>
+																	<th>OrderID</th>
+																	<th>Category</th>
+																	<th>Qty</th>
+																	<th>Price </th>
+																	<th>Total Price </th>
+																</tr>
+															</thead>
+															<tbody>
+																<%for(var i=0;i<order.length-1;i++){%>
+																	<% for(var j=0;j<order[i].items.length-1;j++) {%>
+																		<% if(compYear== order[i].items[j].date.getFullYear()) {%> 
+		
+																<tr>
+																	<td><%=order[i].items[j].orderId%></td>
+																	<td><%=order[i].items[j].productId.category%></td>
+																	<td><%=order[i].items[j].qty%></td>
+																	<td><%=order[i].items[j].productId.discountmrp%></td>
+																	<td>Rs<%=order[i].items[j].productId.discountmrp *order[i].items[j].qty %></td>
+																</tr>
+																<%}%>
+																<%}%>
+																<%}%>
+															
+															</tbody>
+														</table>
+													</div>
+												</div>
+												<div class="card-body-table-footer">
+													<ul>
+														<li><button class="download-btn hover-btn" id="ordersPdf">Download PDF</button></li>
+														<li><button class="download-btn hover-btn" id="ordersCsv">Download CSV</button></li>
+														<!-- <li><button class="download-btn hover-btn">Export to Excel</button></li> -->
+													</ul>
+												</div>
+											</div>
+											
+											<div class="card card-static-2 mb-30">
+												<div class="card-title-2">
+													<h4>Orders Per Month</h4>
+												</div>
+												<div class="card-body-table">
+													<div class="table-responsive">
+														<table class="table ucp-table table-hover" id="ordersYear">
+															<thead>
+																<tr>
+																	<th>OrderID</th>
+																	<th>Category</th>
+																	<th>Qty</th>
+																	<th>Price </th>
+																	<th>Total Price </th>
+																</tr>
+															</thead>
+															<tbody>
+																<%for(var i=0;i<order.length-1;i++){%>
+																	<% for(var j=0;j<order[i].items.length-1;j++) {%>
+																		<% if(compMonth== order[i].items[j].date.getMonth()-1) {%> 
+		
+																<tr>
+																	<td><%=order[i].items[j].orderId%></td>
+																	<td><%=order[i].items[j].productId.category%></td>
+																	<td><%=order[i].items[j].qty%></td>
+																	<td><%=order[i].items[j].productId.discountmrp%></td>
+																	<td>Rs<%=order[i].items[j].productId.discountmrp *order[i].items[j].qty %></td>
+																</tr>
+																<%}%>
+																<%}%>
+																<%}%>
+															
+																
+															</tbody>
+														</table>
+													</div>
+												</div>
+												<div class="card-body-table-footer">
+													<ul>
+														<li><button class="download-btn hover-btn" id="ordersYearPdf">Download PDF</button></li>
+														<li><button class="download-btn hover-btn" id="ordersYearCsv">Download CSV</button></li>
+														<!-- <li><button class="download-btn hover-btn">Export to Excel</button></li> -->
+													</ul>
+												</div>
+											</div>
+											
+										</div>
+									</div>
+								</div>
+							</div>
+                        </div>
+                    </div>
+                </main>
+	          </div>
+			</div>
+			<script src="/js/jsadmin/jquery-3.4.1.min.js"></script>
+			<script src="/js/jsadmin/tableHTMLExport.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.5/jspdf.plugin.autotable.min.js"></script>
+			
+			<script>$(document).ready(function(){
+				$('#ordersPdf').click(function(){
+					
+					 $('#ordersmonth').tableHTMLExport({
+						 type:'pdf',
+						 filename:'monthlyOrders.pdf'
+					 })
+				})
+				$('#ordersCsv').click(function(){
+					 $('#ordersmonth').tableHTMLExport({
+						 type:'csv',
+						 filename:'monthlyOrders.csv'
+					 })
+				})
+				$('#ordersYearPdf').click(function(){
+					 $('#ordersYear').tableHTMLExport({
+						 type:'pdf',
+						 filename:'yearOrders.pdf'
+					 })
+				})
+				$('#ordersYearCsv').click(function(){
+					 $('#ordersYear').tableHTMLExport({
+						 type:'csv',
+						 filename:'yearOrders.csv'
+					 })
+				})
+ 
+			})</script>
+			

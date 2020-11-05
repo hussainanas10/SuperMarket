@@ -1,0 +1,106 @@
+<div class="sign-inup">
+		<div class="container">
+			<%- include('../partials/messages.ejs')  %>
+			<div class="row justify-content-center">
+				<div class="col-lg-5">
+					<div class="sign-form">
+						<div class="sign-inner">
+							<div class="sign-logo" id="logo">
+								<a href="/"><img src="/uploads/<%= settings.logo %>"></a>
+								<a href="/"><img class="logo-inverse" src="images/dark-logo.svg" alt=""></a>
+							</div>
+							<div class="form-dt">
+								<div class="form-inpts checout-address-step">
+									<form action="/sign_up" method="POST">
+										<div class="form-title"><h6>Sign Up</h6></div>
+										<div class="form-group pos_rel">
+											<input id="username" name="username" type="text" placeholder="Username" class="form-control lgn_input" required="">
+											<i class="uil uil-user-circle lgn_icon"></i>
+										</div>
+										<div class="form-group pos_rel">
+											<input id="fullname" name="fullname"  type="text" placeholder="Full name" class="form-control lgn_input" required="">
+											<i class="uil uil-user-circle lgn_icon"></i>
+										</div>
+										<div class="form-group pos_rel">
+											<input id="email"  type="email" placeholder="Email Address" name="emailaddress" class="form-control lgn_input" required="">
+											<i class="uil uil-envelope lgn_icon"></i>
+										</div>
+										<div class="form-group pos_rel">
+											<input id="phone"  type="text" placeholder="Phone Number" name="phone" class="form-control lgn_input" required="">
+											<i class="uil uil-mobile-android-alt lgn_icon"></i>
+										</div>
+										<!-- {{!-- <div class="form-group pos_rel">
+											<label class="control-label">Enter Code</label>
+											<ul class="code-alrt-inputs signup-code-list">
+												<li>
+													<input id="code[1]" name="number1" type="text" placeholder="" class="form-control input-md" >
+												</li>
+												<li>
+													<input id="code[2]" name="number2" type="text" placeholder="" class="form-control input-md" >
+												</li>
+												<li>
+													<input id="code[3]" name="number3" type="text" placeholder="" class="form-control input-md" >
+												</li>
+												<li>
+													<input id="code[4]" name="number4" type="text" placeholder="" class="form-control input-md" >
+												</li>
+												<li>
+													<a class="chck-btn hover-btn code-btn145"  href="#">Send</a>
+												</li>
+											</ul>
+											<a href="#" class="resend-link">Resend Code</a>
+										</div> --}} -->
+										<div class="form-group pos_rel">
+											<input id="password" name="password"  type="password" placeholder="New Password" class="form-control lgn_input" required="">
+											<i class="uil uil-padlock lgn_icon"></i>
+										</div>
+										<!-- <div id="alertu" class="alert alert-success alert-dismissible fade show" role="alert">
+											<strong><span id="message"></span></strong> 
+											<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											  <span aria-hidden="true">&times;</span>
+											</button>
+										  </div> -->
+										
+										<button class="login-btn hover-btn" id="send_email" type="submit">Sign Up Now</button>
+									</form>
+								</div>
+								<div class="signup-link">
+									<p>I have an account? - <a href="/sign_in">Sign In Now</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="copyright-text text-center mt-3">
+						<i class="uil uil-copyright"></i>Copyright 2020 <b>Gambolthemes</b> . All rights reserved
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="/js/jsadmin/jquery-3.4.1.min.js"></script>
+<!-- // 	$(document).ready(function(){
+//         $('.alertu').hide();
+//     var from,emailaddress,password,username,subject,text;
+//     $("#send_email").click(function(){    
+//         emailaddress=$("#email").val();     
+//         password=$("#password").val();     
+// 		username=$("#username").val();
+// 		fullname=$("#fullname").val();
+// 		phone=$("#phone").val();
+//         $('.alertu').show();
+//         $("#message").text("Sending E-mail...Please wait");
+//         $.post("/sign_up",{emailaddress:emailaddress,password:password,username:username,phone:phone,fullname:fullname},function(data){  
+//         $('.alertu').hide();
+//         if(data=="sent")
+//         {
+//         $('.alertu').show();   
+//             $("#message").empty().html("<p>Email is been sent at "+emailaddress+" . Please check inbox !</p>");
+//         }
+//         else if(data == "error")
+//         {
+//         $('.alertu').show();
+//             $("#message").empty().html("<p>Email is been sent at "+to+" . Please check inbox !</p>");
+//         }
+//         });
+//     });
+// }); -->

@@ -1,0 +1,49 @@
+<div id="layoutSidenav">
+
+    <div id="layoutSidenav_content">
+
+        <main>
+
+            <div class="container-fluid">
+                <h2 class="mt-30 page-title">Products</h2>
+                <ol class="breadcrumb mb-30">
+                    <li class="breadcrumb-item"><a href="/admin/home">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="/admin/products">Products</a></li>
+                    <li class="breadcrumb-item active">Add Images</li>
+                </ol>
+                <form action="/admin/add-images/{{productId}}" method="POST" enctype="multipart/form-data">
+
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="card card-static-2 mb-30">
+                                <div class="card-title-2">
+                                    <h4>Add Images</h4>
+                                </div>
+                                <div class="card-body-table">
+                                    <div class="news-content-right pd-20">
+
+                                        <div class="form-group">
+                                            <label class="form-label">Product Image*</label>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <input type="file"  class="custom-file-input" name="images"
+                                                        id="inputGroupFile05" aria-describedby="inputGroupFileAddon05" accept="image/*" multiple/>
+                                                    <label class="custom-file-label" for="inputGroupFile05">Choose
+                                                        Image</label>
+                                                </div>
+                                            </div>
+                                           
+                                        </div>
+                                        <button class="save-btn hover-btn" type="submit">Add Images</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                </form>
+            </div>
+    </div>
+    </main>
+</div>
+</div>

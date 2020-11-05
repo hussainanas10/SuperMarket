@@ -1,0 +1,107 @@
+<div class="wrapper">
+    <div class="dashboard-group">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="user-dt">
+                        <div class="user-img">
+                            <img src="/uploads/<%=user.images%>" alt="">
+                            <!-- <div class="img-add">
+                                <input type="file" id="file">
+                                 <label for="file"><i class="uil uil-camera-plus"></i></label> 
+                            </div> -->
+                        </div>
+                        <h4><%= user.fullname.charAt(0).toUpperCase() + user.fullname.slice(1)%></h4>
+                        <p>+91<%=user.phone%></p>
+                        <!-- <div class="earn-points"><img src="images/Dollar.svg" alt="">Points : <span>20</span></div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4">
+                    <div class="left-side-tabs">
+                        <div class="dashboard-left-links">
+                            <!-- <a href="/dashboard_overview" class="user-item "><i class="uil uil-apps"></i>Overview</a> -->
+                            <a href="/dashboard_my_orders" class="user-item"><i class="uil uil-box"></i>My Orders</a>
+                            <!-- <a href="/dashboard_my_rewards" class="user-item"><i class="uil uil-gift"></i>My Rewards</a>
+                            <a href="/dashboard_my_wallet" class="user-item"><i class="uil uil-wallet"></i>My Wallet</a> -->
+                            <a href="/dashboard_my_wishlist" class="user-item"><i class="uil uil-heart"></i>Shopping
+                                Wishlist</a>
+                            <a href="/dashboard_my_address" class="user-item"><i class="uil uil-location-point"></i>My
+                                Address</a>
+                            <a href="/edit-profile" class="user-item active"><i class="uil  uil-edit"></i>Edit
+                                Profile</a>
+                            <a href="/logout" class="user-item"><i class="uil uil-exit"></i>Logout</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-8">
+                    <div class="dashboard-right">
+                        <div class="row">
+                            <div class="col-md-12 contact-form">
+                                <form action="/edit-profile" method="POST" enctype="multipart/form-data">
+                                    <div class="form-group mt-1 ">
+                                        <label class="control-label">Profile photo*</label>
+                                        <div class="user-img ">
+                                            <img src="/uploads/<%=user.images%>" alt="">
+                                            <div class="img-add">
+                                                <input type="file" class="custom-file-input" name="images"
+                                                    id="inputGroupFile05" aria-describedby="inputGroupFileAddon05"
+                                                    accept="images/*" multiple />
+                                                <label for="inputGroupFile05"><i
+                                                        class="uil uil-camera-plus"></i></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mt-1">
+                                        <label class="control-label">Full Name*</label>
+                                        <div class="ui search focus">
+                                            <div class="ui left icon input swdh11 swdh19">
+                                                <input class="prompt srch_explore" type="text"
+                                                    value="<%=list.fullname%>" name="fullname" id="sendername"
+                                                    required="" placeholder="Your Full">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mt-1">
+                                        <label class="control-label">Username*</label>
+                                        <div class="ui search focus">
+                                            <div class="ui left icon input swdh11 swdh19">
+                                                <input class="prompt srch_explore" type="text"
+                                                    value="<%=list.username%>" name="username" required=""
+                                                    placeholder="username">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mt-1">
+                                        <label class="control-label">Phone Number*</label>
+                                        <div class="ui search focus">
+                                            <div class="ui left icon input swdh11 swdh19">
+                                                <input class="prompt srch_explore" type="text" name="phone"
+                                                    value="<%=list.phone%>" id="sendersubject" required=""
+                                                    placeholder="+91">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- <div class="form-group mt-1">
+                                        <div class="field">
+                                            <label class="control-label">Message*</label>
+                                            <textarea rows="2" class="form-control" id="sendermessage"
+                                                name="sendermessage" required="" placeholder="Write Message"></textarea>
+                                        </div>
+                                    </div> -->
+                                    <button class="next-btn16 hover-btn mt-3" type="submit">Save Changes</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

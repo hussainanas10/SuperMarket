@@ -1,0 +1,314 @@
+<!-- Body Start -->
+<div class="wrapper">
+	<!-- Offers Start -->
+	<div class="main-banner-slider">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="owl-carousel offers-banner owl-theme">
+						<%for (var i=0;i<banner.length;i++) {%>
+						<div class="item">
+							<div class="offer-item">
+								<div class="offer-item-img">
+									<div class="gambo-overlay"></div>
+									<img src="/uploads/<%=banner[i].bannerimage%>" alt="">
+								</div>
+								<div class="offer-text-dt">
+									<div class="offer-top-text-banner">
+										<p><%=banner[i].discount%>% Off</p>
+										<div class="top-text-1"><%=banner[i].bannertitle %></div>
+										<span><%= banner[i].category %> </span>
+									</div>
+									<a href="/shopgrid?category=<%= banner[i].category.split(' ').join('+') %>" class="Offer-shop-btn hover-btn">Shop Now</a>
+								</div>
+							</div>
+						</div>
+						<%}%>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Offers End -->
+	<!-- Categories Start -->
+	<div class="section145">
+		<div class="container">
+			<%- include('../partials/messages.ejs')  %>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="main-title-tt">
+						<div class="main-title-left">
+							<span>Shop By</span>
+							<h2>Categories</h2>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<div class="owl-carousel cate-slider owl-theme">
+						<%for(var i=0;i<category.length;i++){%>
+						<div class="item">
+							<a href="/shopgrid?category=<%= category[i].cname.split(' ').join('+') %>" class="category-item">
+								<div class="cate-img">
+									<img src="/uploads/<%=category[i].cimage%>" alt="">
+								</div>
+								<h4><%=category[i].cname%></h4>
+							</a>
+						</div>
+						<%}%>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Categories End -->
+	<!-- Featured Products Start -->
+	<div class="section145">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="main-title-tt">
+						<div class="main-title-left">
+							<span>For You</span>
+							<h2>Top Featured Products</h2>
+						</div>
+						<a href="/shopgrids" class="see-more-btn">See All</a>
+					</div>
+				</div>
+
+				<div class="col-md-12">
+
+					<div class="owl-carousel featured-slider owl-theme">
+						<% for (var i=0; i < list.length; i++ ){%>
+						<div class="item">
+
+							<div class="product-item">
+								<a href="/single_product/<%=list[i].id%>" class="product-img">
+
+									<img src="/uploads/<%=list[i].images[0]%>" alt="">
+
+									<div class="product-absolute-options">
+										<span class="offer-badge-1"><%=list[i].discount%>% off</span>
+										<!-- <span class="like-icon" title="wishlist"></span> -->
+									</div>
+									<!-- <div class="product-absolute-options">
+										<span class="offer-badge-1"% off</span>
+										<a href="/dashboard_my_wishlist/" class="like-icon"></a>
+									</div> -->
+								</a>
+								<div class="product-text-dt">
+									<p><%=list[i].status%><span>(In Stock)</span></p>
+									<h4><%=list[i].productname%></h4>
+									<div class="product-price">Rs<%=list[i].discountmrp%>
+										<span>Rs<%=list[i].price%></span></div>
+									<div class="qty-cart">
+										<div class="quantity buttons_added">
+											<input type="button" value="-" class="minus minus-btn">
+											<input type="number" step="1" name="quantity" value="1"
+												class="input-text qty text">
+											<input type="button" value="+" class="plus plus-btn">
+										</div>
+										<a href="/dashboard_my_wishlist/<%=list[i].id%>" class="cart-icon"> 
+											<span class="cart-icon">
+												<i class="fa fa-heart"></i>
+											</span>
+										</a>
+										<a href="/add/<%=list[i].id%>" class="cart-icon"> 
+										<span class="cart-icon">
+											<i class="uil uil-shopping-cart-alt"></i>
+										</span>
+										</a>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<%}%>
+						</div>
+					</div>
+				
+				</div>
+			</div>
+		</div>
+		<!-- Featured Products End -->
+		<!-- Best Values Offers Start -->
+		<div class="section145">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="main-title-tt">
+							<div class="main-title-left">
+								<span>Offers</span>
+								<h2>Best Values</h2>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6">
+						<a href="/shopgrids" class="best-offer-item">
+							<img src="images/best-offers/offer-1.jpg" alt="">
+						</a>
+					</div>
+					<div class="col-lg-4 col-md-6">
+						<a href="/shopgrids" class="best-offer-item">
+							<img src="images/best-offers/offer-2.jpg" alt="">
+						</a>
+					</div>
+					<div class="col-lg-4 col-md-6">
+						<a href="/shopgrids" class="best-offer-item offr-none">
+							<img src="images/best-offers/offer-3.jpg" alt="">
+							<div class="cmtk_dt">
+								<div class="product_countdown-timer offer-counter-text" data-countdown="2021/01/06"></div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-12">
+						<a href="/shopgrids" class="code-offer-item">
+							<img src="images/best-offers/offer-4.jpg" alt="">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Best Values Offers End -->
+		<!-- Vegetables and Fruits Start -->
+		<div class="section145">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="main-title-tt">
+							<div class="main-title-left">
+								<span>For You</span>
+								<h2>Fresh Vegetables & Fruits</h2>
+							</div>
+							<a href="/shopgrids" class="see-more-btn">See All</a>
+						</div>
+					</div>
+	
+					<div class="col-md-12">
+	
+						<div class="owl-carousel featured-slider owl-theme">
+							<% for (var i=0; i < list.length; i++ ){%>
+								<% if (list[i].category=="Fruits and Vegetables") {%>
+							<div class="item">
+	
+								<div class="product-item">
+									<a href="/single_product/<%=list[i].id%>" class="product-img">
+	
+										<img src="/uploads/<%=list[i].images[0]%>" alt="">
+	
+										<div class="product-absolute-options">
+											<span class="offer-badge-1"><%=list[i].discount%>% off</span>
+											<!-- <span class="like-icon" title="wishlist"></span> -->
+										</div>
+									
+									</a>
+									<div class="product-text-dt">
+										<p><%=list[i].status%><span>(In Stock)</span></p>
+										<h4><%=list[i].productname%></h4>
+										<div class="product-price">Rs<%=list[i].discountmrp%>
+											<span>Rs<%=list[i].price%></span></div>
+										<div class="qty-cart">
+											<div class="quantity buttons_added">
+												<input type="button" value="-" class="minus minus-btn">
+												<input type="number" step="1" name="quantity" value="1"
+													class="input-text qty text">
+												<input type="button" value="+" class="plus plus-btn">
+											</div>
+											<a href="/dashboard_my_wishlist/<%=list[i].id%>" class="cart-icon"> 
+												<span class="cart-icon">
+													<i class="fa fa-heart"></i>
+												</span>
+											</a>
+											<a href="/add/<%=list[i].id%>" class="cart-icon"> 
+											<span class="cart-icon">
+												<i class="uil uil-shopping-cart-alt"></i>
+											</span>
+											</a>
+										</div>
+									</div>
+								</div>
+	
+							</div>
+							<%}%>
+							<%}%>
+							</div>
+						
+						</div>
+					
+					</div>
+				</div>
+			
+		</div>
+		<!-- Vegetables and Fruits Products End -->
+		<!-- New Products Start -->
+		<div class="section145">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="main-title-tt">
+							<div class="main-title-left">
+								<span>For You</span>
+								<h2>Added New Products</h2>
+							</div>
+							<a href="/shopgrids" class="see-more-btn">See All</a>
+						</div>
+					</div>
+	
+					<div class="col-md-12">
+	
+						<div class="owl-carousel featured-slider owl-theme">
+							<% for (var i=0; i < list.length; i++ ) {%>
+								
+							<div class="item">
+	
+								<div class="product-item">
+									<a href="/single_product/<%=list[i].id%>" class="product-img">
+	
+										<img src="/uploads/<%=list[i].images[0]%>" alt="">
+	
+										<div class="product-absolute-options">
+											<span class="offer-badge-1"><%=list[i].discount%>% off</span>
+											<!-- <span class="like-icon" title="wishlist"></span> -->
+										</div>
+										
+									</a>
+									<div class="product-text-dt">
+										<p><%=list[i].status%><span>(In Stock)</span></p>
+										<h4><%=list[i].productname%></h4>
+										<div class="product-price">Rs<%=list[i].discountmrp%>
+											<span>Rs<%=list[i].price%></span></div>
+										<div class="qty-cart">
+											<div class="quantity buttons_added">
+												<input type="button" value="-" class="minus minus-btn">
+												<input type="number" step="1" name="quantity" value="1"
+													class="input-text qty text">
+												<input type="button" value="+" class="plus plus-btn">
+											</div>
+											<a href="/dashboard_my_wishlist/<%=list[i].id%>" class="cart-icon"> 
+												<span class="cart-icon">
+													<i class="fa fa-heart"></i>
+												</span>
+											</a>
+											<a href="/add/<%=list[i].id%>" class="cart-icon"> 
+											<span class="cart-icon">
+												<i class="uil uil-shopping-cart-alt"></i>
+											</span>
+											</a>
+										</div>
+									</div>
+								</div>
+	
+							</div>
+						
+							<%}%>
+							</div>
+						
+						</div>
+					
+					</div>
+				</div>
+		
+		</div>
+		<!-- New Products End -->
+	</div>
+	<!-- Body End -->

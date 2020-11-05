@@ -1,0 +1,113 @@
+<div id="layoutSidenav">
+
+	          <div id="layoutSidenav_content">
+    
+       <main>
+                    <div class="container-fluid">
+                        <h2 class="mt-30 page-title">Edit Profile</h2>
+                        <ol class="breadcrumb mb-30">
+                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Edit Profile</li>
+                        </ol>
+                        <div class="row">
+							<div class="col-lg-4 col-md-5">
+								<div class="card card-static-2 mb-30">
+									<div class="card-body-table">
+										<div class="shopowner-content-left text-center pd-20">
+											<div class="shop_img mb-3">
+												<img src="/uploads/<%=profile.images%>" alt="">
+
+											</div>
+											<div class="shopowner-dt-left">
+												<h4>Gambo Supermarket</h4>
+												<span>Admin</span>
+											</div>
+											<div class="shopowner-dts">
+												<div class="shopowner-dt-list">
+													<span class="left-dt">Username</span>
+													<span class="right-dt"><%= profile.username %></span>
+												</div>
+												<div class="shopowner-dt-list">
+													<span class="left-dt">Phone</span>
+													<span class="right-dt">+91<%= profile.phone %></span>
+												</div>
+												<div class="shopowner-dt-list">
+													<span class="left-dt">Email</span>
+													<span class="right-dt"><%= profile.emailaddress %></span>
+												</div>
+												
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-8 col-md-7">
+								<div class="card card-static-2 mb-30">
+									<div class="card-title-2">
+										<h4>Edit Profile</h4>
+									</div>
+									<div class="card-body-table">
+										<div class="news-content-right pd-20">
+											<form action="edit-profile" method="POST" enctype="multipart/form-data">
+												
+											<div class="row">
+												<div class="col-lg-6">
+													<div class="form-group mb-3">
+														<label class="form-label">Fullname*</label>
+														<input type="text" name="fullname" class="form-control" value="<%= profile.fullname %> " placeholder="Enter First Name">
+													</div>
+												</div>
+												<div class="col-lg-6">
+													<div class="form-group mb-3">
+														<label class="form-label">Username*</label>
+														<input type="text" name="username" class="form-control" value="<%= profile.username %> " placeholder="Enter First Name">
+													</div>
+												</div>
+												
+												<div class="col-lg-6">
+													<div class="form-group mb-3">
+														<label class="form-label">Email*</label>
+														<input type="email" name="emailaddress" class="form-control" value="<%= profile.emailaddress %> " placeholder="Enter Email Address">
+													</div>
+												</div>
+												<div class="col-lg-6">
+													<div class="form-group mb-3">
+														<label class="form-label">Phone*</label>
+														<input type="text" value="<%= profile.phone %>" name="phone"  class="form-control"  placeholder="Enter Phone Number">
+													</div>
+												</div>
+												<div class="col-lg-6">
+													<div class="form-group mb-3">
+														<label class="form-label">Profile Image*</label>
+														<div class="input-group">
+															<div class="custom-file">
+																<input type="file" class="custom-file-input" name="images"
+                                                    id="inputGroupFile05" aria-describedby="inputGroupFileAddon05"
+                                                    accept="images/*" multiple /><label class="custom-file-label" for="profile-img">Choose Image</label>
+															</div>
+														</div>
+														<div class="add-cate-img-1">
+															<img src="/uploads/<%=profile.images%>" alt="">
+														</div>
+													</div>
+												</div>
+												<!-- <div class="col-lg-6">
+													<div class="form-group mb-3">
+														<label class="form-label">Address*</label>
+														<textarea class="text-control" placeholder="">Ludhiana, Punjab</textarea>														
+													</div>
+												</div> -->
+												<div class="col-lg-12">
+													<button class="save-btn hover-btn" type="submit">Save Changes</button>
+												</div>
+											</div>
+										</form>
+										</div>
+									</div>
+								</div>
+							</div>
+                        </div>
+                    </div>
+                </main>
+	          </div>
+</div>

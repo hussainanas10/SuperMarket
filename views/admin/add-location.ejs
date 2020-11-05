@@ -1,0 +1,43 @@
+<div id="layoutSidenav">
+
+	          <div id="layoutSidenav_content">
+    
+                <main>
+                    <div class="container-fluid">
+                        <h2 class="mt-30 page-title">Locations</h2>
+                        <ol class="breadcrumb mb-30">
+                            <li class="breadcrumb-item"><a href="/home">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="/locations">Locations</a></li>
+                            <li class="breadcrumb-item active">Add Location</li>
+                        </ol>
+                        <div class="row">
+							<div class="col-lg-5 col-md-6">
+								<div class="card card-static-2 mb-30">
+									<div class="card-title-2">
+										<h4>Add New Location</h4>
+									</div>
+									<form action="/admin/add-location" method="POST">
+									<div class="card-body-table">
+										<div class="news-content-right pd-20">
+											<div class="form-group">
+												<label class="form-label">Name*</label>
+												<input type="text" class="form-control" name="locations" placeholder="Location Name">
+											</div>
+											<div class="form-group">
+												<label class="form-label">Status*</label>
+												<select id="status" name="status" class="form-control">
+													<option selected>Active</option>
+													<option value="Inactive">Inactive</option>
+												</select>
+											</div>
+											<button class="save-btn hover-btn" type="submit">Add New</button>
+										</div>
+									</div>
+									</form>
+								</div>
+							</div>
+                        </div>
+                    </div>
+                </main>
+	          </div>
+</div>

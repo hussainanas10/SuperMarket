@@ -1,0 +1,86 @@
+<div id="layoutSidenav">
+
+	<div id="layoutSidenav_content">
+
+		<main>
+			<div class="container-fluid">
+				<h2 class="mt-30 page-title">Posts</h2>
+				<ol class="breadcrumb mb-30">
+					<li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+					<li class="breadcrumb-item"><a href="posts.html">Posts</a></li>
+					<li class="breadcrumb-item active">Add New</li>
+				</ol>
+				<div class="row">
+
+					<div class="col-lg-9 col-md-8">
+						<div class="card card-static-2 mb-30">
+							<div class="card-title-2">
+								<h4>News Content</h4>
+							</div>
+							<form method="POST" action="/admin/add-post" enctype="multipart/form-data">
+								<div class="card-body-table">
+									<div class="post-form">
+										<div class="form-group">
+											<label class="form-label">Title*</label>
+											<input type="text" name="title" class="form-control"
+												placeholder="News title here">
+										</div>
+										<div class="form-group">
+											<label class="form-label">Content*</label>
+											<textarea type="text" name="content" placeholder="content writing"
+												class="form-control"></textarea>
+
+
+										</div>
+											<div class="form-group">
+												<label class="form-label">Category*</label>
+												<select id="categeory" name="category" class="form-control">
+													<option selected>--All Category--</option>
+												<% for( var i=0;i<categorys.length;i++) {%>
+													<option><%=categorys[i].postcategory%></option>
+												<%}%>
+												</select>
+											</div>
+									
+											<div class="form-group">
+												<label class="form-label">Tags*</label>
+												<input type="text" name="tags" class="form-control" placeholder="Enter tag">
+											</div>
+											<div class="form-group">	
+												<label class="form-label">Featured Image*</label>
+												<div class="fea-img">
+													<img style="width: 150px; height:150px; " src="/images/featured-imgadmin.jpg" alt="">
+													<div class="img-add">													
+														<input type="file" name="images" id="file">
+														<label for="file">Upload Image</label>
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="form-label">Publish*</label>
+												<div class="custom-control custom-radio">
+													<input type="radio" id="customRadio1" name="publish" class="custom-control-input">
+													<label class="custom-control-label" for="customRadio1">Publish</label>
+												</div>
+												<div class="custom-control custom-radio">
+													<input type="radio" id="customRadio2" name="draft" class="custom-control-input">
+													<label class="custom-control-label" for="customRadio2">Draft</label>
+												</div>
+												
+											</div>
+										
+										<button class="save-btn hover-btn" type="submit">Save Changes</button>
+									</div>
+								</div>
+
+								
+							</form>
+							
+							
+                        </div>
+                    </div>
+                </main>
+			  </div>
+			  </div>
+			
+     </div>

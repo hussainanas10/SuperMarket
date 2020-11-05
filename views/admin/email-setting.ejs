@@ -1,0 +1,37 @@
+<main>
+	<div class="container-fluid">
+		<h2 class="mt-30 page-title">Setting</h2>
+		<ol class="breadcrumb mb-30">
+			<li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a></li>
+			<li class="breadcrumb-item active">Email Setting</li>
+		</ol>
+		<div class="row">
+			<div class="col-lg-6 col-md-6 offset-3">
+				<div class="card card-static-2 mb-30">
+					<div class="card-title-2">
+						<h4>Email Setting</h4>
+					</div>
+				<form autocomplete="off" action="/admin/email-setting" method="post">
+					<div class="card-body-table">
+						<div class="news-content-right pd-20">
+							<div class="form-group">
+								<label class="form-label">SMTP Email*</label>
+								<input type="text" class="form-control" name="emailEmail" value="<%= setting.emailEmail %>" placeholder="SMTP Email">
+							</div>
+							<div class="form-group">
+								<label class="form-label">SMTP Username*</label>
+								<input type="text" class="form-control" name="emailUsername" value="<%= setting.emailUsername %>" placeholder="SMTP Username">
+							</div>
+							<div class="form-group">
+								<label class="form-label">SMTP Password*</label>
+								<input type="password" class="form-control" name="emailPassword" value="<%= setting.emailPassword %>" placeholder="SMTP Password">
+							</div>
+							<button class="save-btn hover-btn" type="submit">Save Changes</button>
+						</div> 
+					</div>
+				</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>

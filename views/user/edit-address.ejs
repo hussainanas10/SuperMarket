@@ -1,0 +1,193 @@
+<div class="wrapper">
+    <div class="gambo-Breadcrumb">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Add Address</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dashboard-group">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="user-dt">
+                        <div class="user-img">
+                            <img src="/uploads/<%=user.images%>" alt="">
+                            <!-- <div class="img-add">													
+									<input type="file" id="file">
+									<label for="file"><i class="uil uil-camera-plus"></i></label>
+								</div> -->
+                        </div>
+                        <h4><%= user.fullname.charAt(0).toUpperCase() + user.fullname.slice(1)%></h4>
+                        <p>+91<%=user.phone%></p>
+                        <!-- <div class="earn-points"><img src="/images/Dollar.svg" alt="">Points : <span>20</span></div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Offers Start -->
+    <div class="main-banner-slider mb-5">
+        <div class="container ">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="main-add" class="container">
+                        <style>
+                            body {
+                                background-color: white !important;
+                            }
+
+                            #main-add {
+                                width: 40vw !important;
+                            }
+
+                            @media screen and (max-width: 991px) {
+                                #main-add {
+                                    width: 80vw !important;
+                                }
+                            }
+
+                            .bold {
+                                font-weight: bold !important;
+                            }
+                        </style>
+
+                        <!-- style="padding-left:250px; padding-right:250px;" -->
+
+                        <form action="/address" method="POST">
+                            <div class=" text-md-left text-center">
+                                <h2 class="ml-2">Add a new address</h2>
+                            </div>
+                            <div class="form-row mt-4">
+                                <div class="form-group col-md-12">
+                                    <label for="inputEmail8" class="bold">Country</label>
+                                    <input type="text" name="country" 
+                                        class="form-control bold" id="inputEmail8" value="India" placeholder=""
+                                        disabled>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="inputEmail5" class="bold">Full Name</label>
+                                    <input type="text" class="form-control" 
+                                        value="<%=address.addressfullname%>" name="addressfullname"
+                                       >
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="inputEmail6" class="bold">Mobile number</label>
+                                    <input type="text" class="form-control" id="inputEmail6"
+                                        value="<%=address.addressphone%>" name="addressphone"
+                                        placeholder="10-digit mobile number without prefixes">
+                                    <span class="text-muted small">May be used to assist delivery</span>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="inputEmail7" class="bold">PIN code</label>
+                                    <input type="text" name="pin" value="<%=address.pin%>" class="form-control"
+                                        id="inputEmail7" placeholder="6 digits [0-9] PIN code">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="inputEmail9" class="bold">Flat, House no., Building, Company,
+                                        Apartment</label>
+                                    <input type="text" class="form-control" value="<%=address.flatnumber%>"
+                                        name="flatnumber" id="inputEmail9" placeholder="">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="inputEmail11" class="bold">Area, Colony, Street, Sector, Village</label>
+                                    <input type="text" name="colony" value="<%=address.colony%>" class="form-control"
+                                        id="inputEmail11" placeholder="">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="inputEmail10" class="bold">Landmark</label>
+                                    <input type="text" name="landmark" value="<%=address.landmark%>" class="form-control"
+                                        id="inputEmail10"
+                                        placeholder="E.g. Near AIIMS Flyover, Behind Regal Cinema, etc.">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <label for="inputCity" class="bold">Town/City</label>
+                                    <input type="text" name="city" value="<%=address.city%>" class="form-control" id="inputCity">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="inputState" class="bold">State / Province / Region</label>
+                                    <select id="inputState" name="state"  class="form-control">
+                                        <option>Andhra Pradesh</option>
+                                        <option>Andaman and Nicobar Islands</option>
+                                        <option>Arunachal Pradesh</option>
+                                        <option>Assam</option>
+                                        <option>Bihar</option>
+                                        <option>Chandigarh</option>
+                                        <option>Chhattisgarh</option>
+                                        <option>Dadar and Nagar Haveli</option>
+                                        <option>Daman and Diu</option>
+                                        <option selected>Delhi</option>
+                                        <option>Lakshadweep</option>
+                                        <option>Puducherry</option>
+                                        <option>Goa</option>
+                                        <option>Gujarat</option>
+                                        <option>Haryana</option>
+                                        <option>Himachal Pradesh</option>
+                                        <option>Jammu and Kashmir</option>
+                                        <option>Jharkhand</option>
+                                        <option>Karnataka</option>
+                                        <option>Kerala</option>
+                                        <option>Madhya Pradesh</option>
+                                        <option>Maharashtra</option>
+                                        <option>Manipur</option>
+                                        <option>Meghalaya</option>
+                                        <option>Mizoram</option>
+                                        <option>Nagaland</option>
+                                        <option>Odisha</option>
+                                        <option>Punjab</option>
+                                        <option>Rajasthan</option>
+                                        <option>Sikkim</option>
+                                        <option>Tamil Nadu</option>
+                                        <option>Telangana</option>
+                                        <option>Tripura</option>
+                                        <option>Uttar Pradesh</option>
+                                        <option>Uttarakhand</option>
+                                        <option>West Bengal</option>
+                                    </select>
+                                </div>
+
+
+                            </div>
+                            <div class="text-md-left text-center mt-md-2 mt-4">
+                                <button type="submit" class="add-cart-btn hover-btn"
+                                    style="background: #ED5D45 !important;">Add address</button>
+
+                            </div>
+
+                        </form>
+
+
+
+                        <!-- my stuff here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Offers End -->
+        <!-- Categories Start -->
+        <!-- <div class="section145">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+
+
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div> -->
+
+    </div>

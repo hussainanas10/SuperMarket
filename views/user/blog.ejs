@@ -1,0 +1,93 @@
+<!-- Body Start -->
+	<div class="wrapper">
+		<div class="default-dt">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 col-md-12">
+						<div class="default_tabs">
+							<nav>
+								<div class="nav nav-tabs tab_default  justify-content-center">
+									<a class="nav-item nav-link" href="/about_us">About</a>
+									<a class="nav-item nav-link active" href="/ourblog">Blog</a>
+									<!-- <a class="nav-item nav-link" href="career.html">Careers</a> -->
+									<!-- <a class="nav-item nav-link" href="press.html">Press</a> -->
+								</div>
+							</nav>						
+						</div>
+						<div class="title129">	
+							<h2>Insights, ideas, and stories</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="blog-gambo">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-5">
+						<div class="pdpt-bg mt-0">
+							<div class="pdpt-title">
+								<h4>Most Viewed Posts</h4>
+							</div>
+							<ul class="top-posts">
+								<%for(var i=0;i<post.length;i++) {%>
+								<li>
+									<div class="blog-top-item">
+										<a href="/blog_details/<%=post[i].id%>" class="top-post-link"><% if(post[i].content.length > 80) {%>
+											<%= post[i].content.substring(0,80) + '...' %> 
+										<% }else{ %>
+											<%= post[i].content %> 
+										<% } %></a>
+										<span class="blog-time"><%= post[i].createdAt.toString().substring(0,15) %></span>
+									</div>
+								</li>
+								<%}%>
+								
+							</ul>
+						</div>
+						<div class="pdpt-bg mb-30">
+							<div class="pdpt-title">
+								<h4>Contact With Us</h4>
+							</div>
+							<div class="cntct-social">
+								<ul class="team-social">
+									<li><a href="#" class="scl-btn hover-btn"><i class="fab fa-facebook-f"></i></a></li>
+									<li><a href="#" class="scl-btn hover-btn"><i class="fab fa-twitter"></i></a></li>
+									<li><a href="#" class="scl-btn hover-btn"><i class="fab fa-instagram"></i></a></li>
+									<li><a href="#" class="scl-btn hover-btn"><i class="fab fa-linkedin-in"></i></a></li>
+									<li><a href="#" class="scl-btn hover-btn"><i class="fab fa-youtube"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-8 col-md-7">
+						<%for(var i=0;i<post.length;i++) {%>
+						<div class="blog-item">
+							<a href="/blog_details/<%=post[i].id%>" class="blog-img">
+								<img src="/uploads/<%=post[i].images%>" alt="">
+								<div class="blog-cate-badge"><%=post[i].category%></div>
+							</a>
+							<div class="date-icons-group">
+								<div class="blog-time sz-14"><%= post[i].createdAt.toString().substring(0,15) %></div>
+								
+							</div>
+							<div class="blog-detail">
+								<h4><%=post[i].title%></h4>
+								<p>
+								<% if(post[i].content.length > 80) {%>
+									<%= post[i].content.substring(0,80) + '...' %> 
+								<% }else{ %>
+									<%= post[i].content %> 
+								<% } %>
+							</p>
+								<a href="/blog_details/<%=post[i].id%>">Read More</a>
+							</div>
+						</div>
+						<%}%>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Body End -->

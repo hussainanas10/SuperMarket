@@ -1,0 +1,172 @@
+       <div id="layoutSidenav">
+
+	          <div id="layoutSidenav_content">
+    
+	   <main>
+                    <div class="container-fluid">
+                        <h2 class="mt-30 page-title">Shops</h2>
+                        <ol class="breadcrumb mb-30">
+                            <li class="breadcrumb-item"><a href="/admin/">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="/admin/shops">Shops</a></li>
+                            <li class="breadcrumb-item active">Add Shop</li>
+                        </ol>
+						<form action="/admin/edit-shop/<%= list.id %> " method="POST" enctype="multipart/form-data">
+                        <div class="row">
+							<div class="col-lg-12">
+								<div class="add-new-shop">
+									<div class="card card-static-2 mb-30">
+										<div class="row no-gutters">
+											<div class="col-lg-6 col-md-6">
+												<div class="card-title-2">
+													<h4>Add New Shop</h4>
+												</div>
+												<div class="card-body-table">
+													<div class="add-shop-content pd-20">
+														<div class="form-group">
+															<label class="form-label"> Shop Name*</label>
+															<input type="text" class="form-control" name="shopname" value="<%=list.shopname%>" placeholder="Shop Name">
+														</div>
+														<div class="form-group">
+															<label class="form-label">Location*</label>
+															<select id="location" name="locations" class="form-control">
+																<option selected>--Select Location--</option>
+																<% for( var i=0;i<locations.length;i++) {%>
+																	<option ><%=locations[i].locations%></option>
+																	<%}%>
+																</select>
+														</div>
+														<div class="form-group">
+															<label class="form-label">Area*</label>
+															<select id="location" name="areas" class="form-control">
+																<option selected>--Select Area--</option>
+																<% for( var i=0;i<areas.length;i++) {%>
+																	<option ><%=areas[i].areas%></option>
+																	<%}%>
+																</select>
+														</div>
+														<div class="form-group">
+															<label class="form-label">Category*</label>
+															<select id="categtory" name="categorys" class="form-control">
+																<option selected>--Select Category--</option>
+																<% for( var i=0;i<categories.length;i++) {%>
+																	<option ><%=categories[i].cname%></option>
+																	<%}%>
+																</select>
+														</div>
+														<div class="form-group">
+															<label class="form-label">Delivery Charge*</label>
+															<input class="form-control" placeholder="Rs0" value="<%=list.deliverycharge%>" name="deliverycharge">
+														</div>
+														<div class="form-group">
+															<label class="form-label">Latitude*</label>
+															<input class="form-control" placeholder="0" value="<%=list.latitude%>" name="latitude">
+														</div>
+														<div class="form-group">
+															<label class="form-label">Longitude*</label>
+															<input class="form-control" name="longitude" value="<%=list.longitude%>" placeholder="0">
+														</div>
+														<div class="form-group">
+															<label class="form-label">Current Status*</label>
+															<select id="status" name="currentstatus" value="<%=list.currentstatus%>" class="form-control">
+																<option selected>Yes</option>
+																<option value="No">No</option>
+															</select>
+														</div>
+														<div class="form-group">
+															<label class="form-label">Status*</label>
+															<select id="status" name="status" value="<%=list.status%>" class="form-control">
+																<option selected>Active</option>
+																<option value="Inactive">Inactive</option>
+															</select>
+														</div>
+														<div class="form-group">
+															<label class="form-label">Address*</label>
+															<div class="card card-editor">
+																<div class="content-editor">
+																	 <textarea class="text-control" name="address" value="" placeholder=""><%=list.address%></textarea>
+																</div>
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="form-label">Description*</label>
+															<div class="card card-editor">
+																<div class="content-editor">
+																	 <textarea class="text-control" name="description" value="" placeholder=""><%=list.description%></textarea>
+																</div>
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="form-label">Shop Image*</label>
+															<div class="input-group">
+																<div class="custom-file">
+																	<input type="file" name="image" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
+																	<label class="custom-file-label" for="inputGroupFile04">Choose Image</label>
+																</div>
+															</div>
+															<div class="add-cate-img-1">
+																<img src="/uploads/<%=list.image%>" alt="">
+															</div>
+														</div>	
+														<button class="save-btn hover-btn" type="submit">Add New Shop</button>
+													</div> 
+												</div>
+											</div>
+											<div class="col-lg-6 col-md-6">
+												<div class="card-title-2">
+													<h4>Add New Shop</h4>
+												</div>
+												<div class="card-body-table">
+													<div class="add-shop-content pd-20">
+														<div class="form-group">
+															<label class="form-label">Opening Time*</label>
+															<input type="time" id="default-picker" name="openingtime" value="<%=list.openingtime%>" class="form-control" placeholder="Select time">
+														</div>
+														<div class="form-group">
+															<label class="form-label">Close Time*</label>
+															<input type="time" id="default-picker" name="closingtime" value="<%=list.closingtime%>" class="form-control" placeholder="Select time">
+														</div>
+													</div>
+												</div>
+												
+												<div class="card-title-2">
+													<h4>Shop Owner</h4>
+												</div>
+												<div class="card-body-table">
+													<div class="add-shop-content pd-20">
+														<div class="form-group">
+															<label class="form-label">Full Name*</label>
+															<input class="form-control" type="text" placeholder="Enter Full Name" value="<%=list.fullname%>" name="fullname">
+														</div>
+														<div class="form-group">
+															<label class="form-label">Username*</label>
+															<input class="form-control" name="username" type="text" value="<%=list.username%>" placeholder="Enter Username">
+														</div>
+														<div class="form-group">
+															<label class="form-label">Email Address*</label>
+															<input class="form-control" type="email" name="email" value="<%=list.email%>" placeholder="Enter Email Address">
+														</div>
+														<div class="form-group">
+															<label class="form-label">Phone Number*</label>
+															<input class="form-control" type="text" name="phone" value="<%=list.phone%>" placeholder="Enter Phone Number">
+														</div>
+														<div class="form-group">
+															<label class="form-label">Owner Address*</label>
+															<div class="card card-editor">
+																<div class="content-editor">
+																	 <textarea class="text-control" name="owenraddress" value="" placeholder="" ><%=list.owenraddress%></textarea>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+                        </div>
+						</form>
+                    </div>
+                </main>
+	          </div>
+       </div>

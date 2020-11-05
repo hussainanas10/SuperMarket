@@ -1,0 +1,127 @@
+<div id="layoutSidenav">
+
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid">
+                <h2 class="mt-30 page-title">Dashboard</h2>
+                <ol class="breadcrumb mb-30">
+                    <li class="breadcrumb-item active">Dashboard</li>
+                </ol>
+                <div class="row">
+                    <div class="col-xl-3 col-md-6">
+                        <div class="dashboard-report-card purple">
+                            <div class="card-content">
+                                <span class="card-title">Total Order</span>
+                                <span class="card-count"><%= order.length %> </span>
+                            </div>
+                            <div class="card-media">
+                                <i class="fab fa-rev"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="dashboard-report-card red">
+                            <div class="card-content">
+                                <span class="card-title">Total Shops</span>
+                                <span class="card-count"><%= shop.length %> </span>
+                            </div>
+                            <div class="card-media">
+                                <i class="fas fa-angle-double-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="dashboard-report-card info">
+                            <div class="card-content">
+                                <span class="card-title">Total Products</span>
+                                <span class="card-count"><%= product.length %> </span>
+                            </div>
+                            <div class="card-media">
+                                <i class="fas fa-sync-alt rpt_icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="dashboard-report-card success">
+                            <div class="card-content">
+                                <span class="card-title">Today User</span>
+                                <span class="card-count"><%= user.length %> </span>
+                            </div>
+                            <div class="card-media">
+                                <i class="fa fa-user"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-12 col-md-12">
+                        <div class="card card-static-2 mb-30">
+                            <div class="card-title-2">
+                                <h4>Recent Orders</h4>
+                                <a href="/admin/orders" class="view-btn hover-btn">View All</a>
+                            </div>
+                            <div class="card-body-table">
+                                <div class="table-responsive">
+                                    <table class="table ucp-table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th style="width:130px">Order ID</th>
+                                                <th>Item</th>
+                                                <th style="width:200px">Date</th>
+                                                <th style="width:300px">Address</th>
+                                                <th style="width:130px">Status</th>
+                                                <th style="width:130px">Total</th>
+                                                <th style="width:100px">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <%var lim=5;for(var i=0;i<order.length;i++){%>
+                                                <% for(var j=0;j<order[i].items.length;j++) {%>
+                                                <%if ( lim<=0){
+                                                    break;
+                                                    
+                                                    }else{lim--;}%>
+                                                <tr>
+                                                    <td><%=order[i].items[j].orderId%></td>
+                                                    <td>
+                                                        <a href="#" target="_blank"><%=order[i].items[j].productId.productname%></a>
+                                                    </td>
+                                                    <td>
+                                                        <span class="delivery-time"><%= order[i].items[j].date.toString().substring(0,15) %></span>
+                                                        <span class="delivery-time"><%= order[i].items[j].date.toString().substring(15,25) %></span>
+                                                    </td>
+                                                    <td><%=order[i].items[j].address%></td>
+                                                    <td>
+                                                        <span class="badge-item badge-status">Pending</span>
+                                                    </td>
+                                                    <td>Rs<%=order[i].items[j].productId.discountmrp *order[i].items[j].qty %></td>
+                                                    <td class="action-btns">
+                                                        <a href="/admin/order-view/<%=order[i].id%>/<%= j %>" class="views-btn"><i class="fas fa-eye"></i></a>
+                                                        
+                                                    </td>
+                                                </tr>
+                                                <%}%>
+                                                <%}%>
+                                                
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+         <footer class="py-4 bg-footer mt-auto">
+            <div class="container-fluid">
+                <div class="d-flex align-items-center justify-content-between small">
+                    <div class="text-muted-1">© 2020 <b>Gambo Supermarket</b>. by <a
+                            href="https://themeforest.net/user/gambolthemes">Gambolthemes</a></div>
+                    <div class="footer-links">
+                        <a href="../gambo_supermarket_demo/privacy_policy.html">Privacy Policy</a>
+                        <a href="../gambo_supermarket_demo/term_and_conditions.html">Terms &amp; Conditions</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+   
+    </div>
+</div>

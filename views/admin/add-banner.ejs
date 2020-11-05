@@ -1,0 +1,82 @@
+<div id="layoutSidenav">
+
+	<div id="layoutSidenav_content">
+
+		<main>
+
+			<div class="container-fluid">
+				<h2 class="mt-30 page-title">Products</h2>
+				<ol class="breadcrumb mb-30">
+					<li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
+					<li class="breadcrumb-item"><a href="/admin/products">Banner</a></li>
+					<li class="breadcrumb-item active">Add Banner</li>
+				</ol>
+				<form action="/admin/add-banner" method="POST" enctype="multipart/form-data">
+					<div class="row">
+						<div class="col-lg-6 col-md-6">
+							<div class="card card-static-2 mb-30">
+								<div class="card-title-2">
+									<h4>Add new banner</h4>
+								</div>
+								<div class="card-body-table">
+									<div class="news-content-right pd-20">
+										<div class="form-group">
+											<label class="form-label">Banner Title*</label>
+											<input type="text" class="form-control" placeholder="Buy More & Save More"
+												name="bannertitle" >
+										</div>
+										<div class="form-group">
+											<label class="form-label">Category*</label>
+											<select id="categtory" name="category" class="form-control">
+												
+												<option selected>--Select Category--</option>
+												<% for( var i=0;i<categorys.length;i++) {%>
+												<option ><%=categorys[i].cname%></option>
+												<%}%>
+												<!-- <option value="Grocery & Staples">Grocery & Staples</option>
+												<option value="Dairy & Eggs">Dairy & Eggs</option>
+												<option value="Beverages">Beverages</option>
+												<option value="Snacks">Snacks</option>
+												<option value="Home Care">Home Care</option>
+												<option value="Noodles & Sauces">Noodles & Sauces</option>
+												<option value="Personal Care">Personal Care</option>
+												<option value="Pet Care">Pet Care</option>
+												<option value="Meat & Seafood">Meat & Seafood</option>
+												<option value="Electronics">Electronics</option> -->
+											</select>
+										</div>
+										
+										<div class="form-group">
+											<label class="form-label">Discount*</label>
+											<input type="text" class="form-control" placeholder="5%" name="discount"
+												>
+										</div>
+										
+										<div class="form-group">
+                                            <label class="form-label">Category Image*</label>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <input type="file" name="bannerimage" class="custom-file-input"
+                                                        id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" accept="image/*" />
+                                                    <label class="custom-file-label" for="inputGroupFile04">Choose
+                                                        Image</label>
+                                                </div>
+                                            </div>
+                                            <div class="add-cate-img">
+                                                <img src="/images/category/icon-1.svg" alt="">
+                                            </div>
+                                        </div>
+
+										<button class="save-btn hover-btn" type="submit">Add New Banner</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</form>
+			</div>
+
+		</main>
+	</div>
+</div>

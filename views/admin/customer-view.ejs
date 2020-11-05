@@ -1,0 +1,69 @@
+<div id="layoutSidenav">
+
+	<div id="layoutSidenav_content">
+
+		<main>
+			<div class="container-fluid">
+				<h2 class="mt-30 page-title">Customers</h2>
+				<ol class="breadcrumb mb-30">
+					<li class="breadcrumb-item"><a href="/admin/home">Dashboard</a></li>
+					<li class="breadcrumb-item"><a href="/admin/customers">Customers</a></li>
+					<li class="breadcrumb-item active">Customer View</li>
+				</ol>
+
+				<div class="row">
+					<div class="col-lg-5 col-md-6">
+						<div class="card card-static-2 mb-30">
+							<div class="card-body-table">
+								<div class="shopowner-content-left text-center pd-20">
+									<div class="customer_img">
+										<img src="/uploads/<%=list.images%>" alt="">
+									</div>
+									<div class="shopowner-dt-left mt-4">
+										<h4><%=list.fullname%></h4>
+										<span>Customer</span>
+									</div>
+									<!-- <ul class="product-dt-purchases">
+										<li>
+											<div class="product-status">
+												Purchased <span class="badge-item-2 badge-status">15</span>
+											</div>
+										</li>
+										<li>
+											<div class="product-status">
+												Rewards <span class="badge-item-2 badge-status">5</span>
+											</div>
+										</li>
+									</ul> -->
+									<div class="shopowner-dts">
+										<div class="shopowner-dt-list">
+											<span class="left-dt">Name</span>
+											<span class="right-dt"><%=list.fullname%></span>
+										</div>
+										<div class="shopowner-dt-list">
+											<span class="left-dt">Username</span>
+											<span class="right-dt"><%=list.username%></span>
+										</div>
+										<div class="shopowner-dt-list">
+											<span class="left-dt">Email</span>
+											<span class="right-dt"><%=list.emailaddress%></span>
+										</div>
+										<div class="shopowner-dt-list">
+											<span class="left-dt">Phone</span>
+											<span class="right-dt">+91<%=list.phone%></span>
+										</div>
+										<div class="shopowner-dt-list">
+											<span class="left-dt">Address</span>
+											<span class="right-dt"><%= list.address[0].city %>,<%= list.address[0].state %> </span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</main>
+	</div>
+</div>

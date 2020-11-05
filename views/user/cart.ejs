@@ -1,0 +1,163 @@
+<div class="wrapper">
+    <div class="gambo-Breadcrumb">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Cart</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div class="wrapper min-vh-100 position-relative mb-5 overflow-auto"> -->
+<!-- Offers Start -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class=" text-center">
+                <div class="bs-canvas-header side-cart-header p-3 ">
+                    
+                    <div class="d-inline-block  main-cart-title">My Cart <span>(<%=cart.items.length%> Items)</span></div>
+                    <!-- <button type="button" class="bs-canvas-close close" aria-label="Close"><i class="uil uil-multiply"></i></button> -->
+                </div>
+                <!-- <div class="d-inline-block  main-cart-title">My Cart <span>(2 Items)</span></div> -->
+                <!-- <div class="my-md-5 my-2 text-center">
+                        <h1>My Cart <span style="color:#ED5D45 !important;">(2 items)</span></h1>
+                    </div> -->
+                <style>
+                    body {
+                        /* background-image: url('/images/banner.svg') !important; */
+                    }
+
+                    .bold {
+                        font-weight: bold !important;
+                    }
+                </style>
+                <!-- my stuff start here -->
+                <div class="cart-top-total">
+                    <div class="cart-total-dil">
+                        <h4 class="bold">Gambo Super Market</h4>
+                        <!-- <span>$34</span> -->
+                    </div>
+                    <div class="cart-total-dil pt-2">
+                        <h4 class="bold">Delivery Charges</h4>
+                        <span>Rs10</span>
+                    </div>
+                </div>
+                <div class="side-cart-items">
+                    <%for ( var i=0;i<cart.items.length;i++){%>
+                    <div class="cart-item">
+                        <div class="cart-product-img">
+                            <img src="/uploads/<%=cart.items[i].productId.images[0]%>" alt="">
+                            <div class="offer-badge"><%=cart.items[i].productId.discount%>% OFF</div>
+                        </div>
+                        <div class="cart-text">
+                            <h4><%=cart.items[i].productId.productname%></h4>
+                            <!-- <div class="cart-radio">
+                                <ul class="kggrm-now">
+                                    <li>
+                                        <input type="radio" id="a1" name="cart1">
+                                        <label for="a1">0.50</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="a2" name="cart1">
+                                        <label for="a2">1kg</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="a3" name="cart1">
+                                        <label for="a3">2kg</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="a4" name="cart1">
+                                        <label for="a4">3kg</label>
+                                    </li>
+                                </ul>
+                            </div> -->
+                            <div class="qty-group">
+                                <div class="quantity buttons_added">
+                                    <a href="/decrease/<%= cart.items[i].productId._id %>" type="button"
+                                        class="minus minus-btn">-</a>
+                                    <input type="number" step="1" name="qtybutton" value="<%= cart.items[i].qty %>"
+                                        class="input-text qty text">
+                                    <a href="/increase/<%= cart.items[i].productId._id %>" type="button"
+                                        class="plus plus-btn">+</a>
+                                </div>
+                                <div class="cart-item-price">
+                                    Rs<%= cart.items[i].qty*cart.items[i].productId.discountmrp %><span>Rs<%= cart.items[i].qty*cart.items[i].productId.price %></span>
+                                </div>
+                            </div>
+
+                            <a href="/remove/<%= cart.items[i].productId._id %>" type="button" class="cart-close-btn"><i class="uil uil-multiply"></i></a>
+                        </div>
+                    </div>
+                    <%}%>
+                        <!-- <div class="cart-item">
+                            <div class="cart-product-img">
+                                <img src="images/product/img-2.jpg" alt="">
+                                <div class="offer-badge">6% OFF</div>
+                            </div>
+                            <div class="cart-text">
+                                <h4>Product Title Here</h4>
+                                <div class="cart-radio">
+                                    <ul class="kggrm-now">
+                                        <li>
+                                            <input type="radio" id="a5" name="cart2">
+                                            <label for="a5">0.50</label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="a6" name="cart2">
+                                            <label for="a6">1kg</label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="a7" name="cart2">
+                                            <label for="a7">2kg</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="qty-group">
+                                    <div class="quantity buttons_added">
+                                        <input type="button" value="-" class="minus minus-btn">
+                                        <input type="number" step="1" name="quantity" value="1"
+                                            class="input-text qty text">
+                                        <input type="button" value="+" class="plus plus-btn">
+                                    </div>
+                                    <div class="cart-item-price">$24 <span>$30</span></div>
+                                </div>
+                                <button type="button" class="cart-close-btn"><i class="uil uil-multiply"></i></button>
+                            </div>
+                            
+                        </div> -->
+                        <!-- <div class="cart-total-dil saving-total">
+                            <h4>Total Saving</h4>
+                            <span>$11</span>
+                        </div> -->
+                        <div class="main-total-cart">
+                            <h2>Total</h2>
+                            <span>Rs<%= cart.total %></span>
+                        </div>
+                        <div class="checkout-cart">
+                            <a href="#" class="promo-code">Have a promocode?</a>
+                            <a href="/checkout?price=<%= cart.total %>" class="cart-checkout-btn hover-btn">Proceed to Checkout</a>
+                            <!-- </div> -->
+                        </div>
+                    </div>
+                    
+                    <!-- my stuff here -->
+                </div>
+            </div>
+        </div>
+
+
+        <!-- </div> -->
+
+        <!-- <div class="wrapper container mt-0 pt-0 mb-5"> -->
+
+
+
+    </div>

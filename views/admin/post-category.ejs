@@ -1,0 +1,121 @@
+<div id="layoutSidenav">
+
+	<div id="layoutSidenav_content">
+
+		<main>
+			<div class="container-fluid">
+				<h2 class="mt-30 page-title">Posts</h2>
+				<ol class="breadcrumb mb-30">
+					<li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+					<li class="breadcrumb-item"><a href="posts.html">Posts</a></li>
+					<li class="breadcrumb-item active">Category</li>
+				</ol>
+				<div class="row">
+					<div class="col-lg-4 col-md-5">
+						<div class="card card-static-2 mb-30">
+							<div class="card-title-2">
+								<h4>Add New Category</h4>
+							</div>
+							<div class="card-body-table">
+								<form method="POST" action="post-categories">
+									<div class="news-content-right pd-20">
+
+										<div class="form-group">
+											<label class="form-label">Name*</label>
+											<input type="text" name="postcategory" class="form-control"
+												placeholder="Category Name">
+										</div>
+										<!-- <div class="form-group">
+												<label class="form-label">Parent*</label>
+												<select id="categeory" name="categeory" class="form-control">
+													<option selected>--Please Select--</option>
+													<option value="1">Food &amp; Lifestyle</option>
+													<option value="2">Uncategory</option>
+													<option value="3">Body Care</option>
+													<option value="4">Food News</option>
+													<option value="5">Recipes</option>
+												</select>
+											</div> -->
+										<div class="form-group mb-0">
+											<label class="form-label">Slug*</label>
+											<input type="text" name="postslug" class="form-control"
+												placeholder="Category Slug">
+										</div>
+										<button class="save-btn hover-btn" type="submit">Add New</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-8 col-md-7">
+						<div class="all-cate-tags">
+							<div class="row justify-content-between">
+								<div class="col-lg-4 col-md-5">
+									<div class="bulk-section mb-30">
+										<div class="input-group">
+											<select id="action" name="action" class="form-control">
+												<option selected>Bulk Actions</option>
+												<option value="1">Publish</option>
+												<option value="2">Move to Draft</option>
+												<option value="3">Delete</option>
+											</select>
+											<div class="input-group-append">
+												<button class="status-btn hover-btn" type="submit">Apply</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-5 col-md-7">
+									<div class="bulk-section text-left mb-30">
+										<div class="search-by-name-input mr-0">
+											<input type="text" class="form-control" placeholder="Search by Category">
+										</div>
+										<button class="status-btn hover-btn" type="submit">Search Category</button>
+									</div>
+								</div>
+								<div class="col-lg-12 col-md-12">
+									<div class="card card-static-2 mb-30">
+										<div class="card-title-2">
+											<h4>All Categories</h4>
+										</div>
+										<div class="card-body-table">
+											<div class="table-responsive">
+												<table class="table ucp-table table-hover">
+													<thead>
+														<tr>
+															<th style="width:60px"><input type="checkbox"
+																	class="check-all"></th>
+															<th scope="col">Name</th>
+															<th scope="col">Slug</th>
+															<th scope="col">Date</th>
+														</tr>
+													</thead>
+													<tbody>
+														<%for(var i=0;i<categories.length;i++) {%>
+														<tr>
+															<td><input type="checkbox" class="check-item" name="ids[]"
+																	value="5"></td>
+															<td>
+																<a href="#" target="_blank"><%=categories[i].postcategory%></a>
+															</td>
+															<td><%=categories[i].postslug%></td>
+															<td>
+																<span class="delivery-time"><%= categories[i].createdAt.toString().substring(0,15) %></span>
+															</td>
+														</tr>
+														<%}%>
+														
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+</div>

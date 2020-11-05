@@ -1,0 +1,99 @@
+            <div id="layoutSidenav">
+
+	          <div id="layoutSidenav_content">
+    
+		   <main>
+                    <div class="container-fluid">
+                        <h2 class="mt-30 page-title">Posts</h2>
+                        <ol class="breadcrumb mb-30">
+                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Posts</li>
+                        </ol>
+                        <div class="row justify-content-between">
+							<div class="col-lg-12">
+								<a href="/admin/add-post" class="add-btn hover-btn">Add New Post</a>
+							</div>
+							<div class="col-lg-3 col-md-4">
+								<div class="bulk-section mt-30">
+									<div class="input-group">
+										<select id="action" name="action" class="form-control">
+											<option selected>Bulk Actions</option>
+											<option value="1">Publish</option>
+											<option value="2">Move to Draft</option>
+											<option value="3">Delete</option>
+										</select>
+										<div class="input-group-append">
+											<button class="status-btn hover-btn" type="submit">Apply</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-5 col-md-6">
+								<div class="bulk-section mt-30">
+									<div class="search-by-name-input">
+										<input class="form-control" placeholder="Search by name">
+									</div>
+									<div class="input-group">
+										<select id="categeory" name="categeory" class="form-control">
+											<option selected>--All Category--</option>
+											<option value="1">Category 01</option>
+											<option value="2">Category 02</option>
+											<option value="3">Category 03</option>
+											<option value="3">Category 04</option>
+											<option value="3">Category 05</option>
+										</select>
+										<div class="input-group-append">
+											<button class="status-btn hover-btn" type="submit">Search News</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-12 col-md-12">
+								<div class="card card-static-2 mt-30 mb-30">
+									<div class="card-title-2">
+										<h4>All Posts</h4>
+									</div>
+									<div class="card-body-table">
+										<div class="table-responsive">
+											<table class="table ucp-table table-hover">
+												<thead>
+													<tr>
+														<th style="width:60px"><input type="checkbox" class="check-all"></th>
+														<th>Name</th>
+														<th style="width:150px">Category</th>
+														<!-- <th style="width:150px">Author</th> -->
+														<th style="width:130px">Date</th>
+														<th style="width:130px">Status</th>
+														<th style="width:100px">Action</th>
+													</tr>
+												</thead>
+												<tbody>
+													<%for (var i=0;i<post.length;i++) {%>
+													<tr>
+														<td><input type="checkbox" class="check-item" name="ids[]" value="4"></td>
+														<td>
+															<%=post[i].title%> 
+														</td>
+														<td><%=post[i].category%></td>
+														<!-- <td>System Admin</td> -->
+														<td>
+															<span class="delivery-time"><%= post[i].createdAt.toString().substring(0,15) %></span>
+														</td>
+														<td><span class="badge-item badge-status"><%=post[i].publish%></span></td>
+														<td class="action-btns">
+															<a href="/admin/edit-posts/<%=post[i].id%>" class="edit-btn"><i class="fas fa-edit"></i> Edit</a>
+														</td>
+													</tr>
+													<%}%>
+																	
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+                        </div>
+                    </div>
+                </main>
+	          </div>
+            </div>

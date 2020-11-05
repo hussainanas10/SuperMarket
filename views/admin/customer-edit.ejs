@@ -1,0 +1,68 @@
+      <div id="layoutSidenav">
+
+	          <div id="layoutSidenav_content">
+    
+	  <main>
+                    <div class="container-fluid">
+                        <h2 class="mt-30 page-title">Customers</h2>
+                        <ol class="breadcrumb mb-30">
+                            <li class="breadcrumb-item"><a href="/admin/">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="/customers">Customers</a></li>
+                            <li class="breadcrumb-item active">Customer Edit</li>
+                        </ol>
+                        <form action="/admin/customer-edit" method="POST" enctype="multipart/form-data">
+						<div class="row">
+							<div class="col-lg-6 col-md-6">
+								<div class="card card-static-2 mb-30">
+									<div class="card-title-2">
+										<h4>Edit Customer</h4>
+									</div>
+									<div class="card-body-table">
+										<div class="news-content-right pd-20">
+											<div class="form-group">
+												<label class="form-label">Name*</label>
+												<input type="text" class="form-control" name="fullname" value="<%=list.fullname%>" placeholder="Enter Full Name">
+											</div>
+											<div class="form-group">
+												<label class="form-label">Username*</label>
+												<input type="text" class="form-control" name="username" value="<%=list.username%>" placeholder="Enter Username">
+											</div>
+											<div class="form-group">
+												<label class="form-label">Email*</label>
+												<input type="email" class="form-control" name="emailaddress" value="<%=list.emailaddress%>" placeholder="Enter Email Address">
+											</div>
+											<div class="form-group">
+												<label class="form-label">Phone*</label>
+												<input type="text" class="form-control" name="phone" value="+91<%=list.phone%>" placeholder="Enter Phone Number">
+											</div>
+											<div class="form-group">
+												<label class="form-label">Customer Image*</label>
+												<div class="input-group">
+													<div class="custom-file">
+														<input type="file" class="custom-file-input" id="inputGroupFile04" name="images" aria-describedby="inputGroupFileAddon04">
+														<label class="custom-file-label" for="inputGroupFile04">Choose Image</label>
+													</div>
+												</div>
+												<div class="add-customer-img">
+													<img src="/uploads/<%=list.images%>"  alt="">
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="form-label">Address*</label>
+												<div class="card card-editor">
+													<div class="content-editor">
+														<textarea class="text-control" name="address" value="<%=list.address%>" placeholder="Enter Description"></textarea>
+													</div>
+												</div>
+											</div>
+											<button class="save-btn hover-btn" type="submit">Save Changes</button>
+										</div> 
+									</div>
+								</div>
+							</div>
+                        </div>
+						</form>
+                    </div>
+                </main>
+	          </div>
+      </div>

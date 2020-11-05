@@ -1,0 +1,259 @@
+<!-- Body Start -->
+	<div class="wrapper">
+		<div class="gambo-Breadcrumb">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="/">Home</a></li>
+								<li class="breadcrumb-item active" aria-current="page">Checkout</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="all-product-grid">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 col-md-7">
+						<div id="checkout_wizard" class="checkout accordion left-chck145">
+							<!-- <div class="checkout-step">
+								<div class="checkout-card" id="headingOne"> 
+									<span class="checkout-step-number">1</span>
+									<h4 class="checkout-step-title"> 
+										<button class="wizard-btn" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Phone Number Verification</button>
+									</h4>
+								</div>
+								<div id="collapseOne" class="collapse in show" data-parent="#checkout_wizard">
+									<div class="checkout-step-body">
+										<p>We need your phone number so we can inform you about any delay or problem.</p>	
+										<p class="phn145">4 digits code send your phone <span>+918437176189</span><a class="edit-no-btn hover-btn" data-toggle="collapse" href="#edit-number">Edit</a></p>
+										<div class="collapse" id="edit-number">
+											<div class="row">
+												<div class="col-lg-8">
+													<div class="checkout-login">
+														<form>
+															<div class="login-phone">
+																<input type="text" class="form-control" placeholder="Phone Number">
+															</div>
+															<a class="chck-btn hover-btn" role="button" data-toggle="collapse" href="#otp-verifaction" >Send Code</a>
+														</form>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="otp-verifaction">
+											<div class="row">
+												<div class="col-lg-12">
+													<div class="form-group mb-0">
+														<label class="control-label">Enter Code</label>
+														<ul class="code-alrt-inputs">
+															<li>
+																<input id="code[1]" name="number" type="text" placeholder="" class="form-control input-md" required="">
+															</li>
+															<li>
+																<input id="code[2]" name="number" type="text" placeholder="" class="form-control input-md" required="">
+															</li>
+															<li>
+																<input id="code[3]" name="number" type="text" placeholder="" class="form-control input-md" required="">
+															</li>
+															<li>
+																<input id="code[4]" name="number" type="text" placeholder="" class="form-control input-md" required="">
+															</li>
+															<li>
+																<a class="collapsed chck-btn hover-btn" role="button" data-toggle="collapse" data-parent="#checkout_wizard" href="#collapseTwo">Next</a>
+															</li>
+														</ul>
+														<a href="#" class="resend-link">Resend Code</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div> -->
+							<div class="checkout-step">
+								<div class="checkout-card" id="headingTwo">
+									<span class="checkout-step-number">1</span>
+									<h4 class="checkout-step-title">
+										<button class="wizard-btn collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"> Delivery Address</button>
+									</h4>
+								</div>
+								<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#checkout_wizard">
+									<div class="checkout-step-body">
+										<div class="checout-address-step">
+											<div class="row">
+												<div class="col-lg-12">												
+													<form class="">
+														<!-- Multiple Radios (inline) -->
+														<div class="form-group">
+															<div class="product-radio">
+																<ul class="product-now">
+																	<li>
+																		<input type="radio" id="ad1" name="address1" checked>
+																		<label for="ad1">Home</label>
+																	</li>
+																	<li>
+																		<input type="radio" id="ad2" name="address1">
+																		<label for="ad2">Office</label>
+																	</li>
+																	<li>
+																		<input type="radio" id="ad3" name="address1">
+																		<label for="ad3">Other</label>
+																	</li>
+																</ul>
+															</div>
+														</div>
+														<div class="address-fieldset">
+															<div class="row">
+																<%for(var i=0;i<user.address.length;i++){%>
+																	
+																	<div class="address-item ">
+																		
+																		<div class="address-icon1">
+																			<i class="uil uil-home-alt"></i>
+																		</div>
+																		<div class="address-dt-all">
+																			<h4>Home</h4>
+																			<input id="radio" class="radio-inline" name="paymentmethod" type="radio" data-minimum="50.0">
+																			<input type="text" id="address" value="<%=user.address[i].addressfullname%>,<%=user.address[i].flatnumber%>,<%=user.address[i].colony%>,<%=user.address[i].landmark%>,<%=user.address[i].city%>,<%=user.address[i].state%>,<%=user.address[i].country%>,<%=user.address[i].addressphone%>,<%=user.address[i].pin%>" hidden>
+																			<label id="address" ><%=user.address[i].addressfullname%>,<%=user.address[i].flatnumber%>,<%=user.address[i].colony%>,<%=user.address[i].landmark%>,<%=user.address[i].city%>,<%=user.address[i].state%>,<%=user.address[i].country%>,<%=user.address[i].addressphone%>,<%=user.address[i].pin%>
+																			</label>
+																			
+																			
+																		
+																		</div>
+																	
+																	</div>
+																	<%}%>
+																
+															</div>
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						
+							<div class="checkout-step">
+								<div class="checkout-card" id="headingFour">
+									<span class="checkout-step-number">2</span>
+									<h4 class="checkout-step-title"> 
+										<button class="wizard-btn collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">Payment</button>
+									</h4>
+								</div>
+								<div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#checkout_wizard">
+									<div class="checkout-step-body">
+										<div class="payment_method-checkout">	
+											<div class="row">	
+												<div class="col-md-12">
+													<div class="rpt100">													
+														<ul class="radio--group-inline-container_1">
+															<!-- <li>
+																<div class="radio-item_1">
+																	<input id="cashondelivery1" value="cashondelivery" name="paymentmethod" type="radio" data-minimum="50.0">
+																	<label for="cashondelivery1" class="radio-label_1">Cash on Delivery</label>
+																</div>
+															</li> -->
+															<li>
+																<div class="radio-item_1">
+																	<input type="text" id="price" value="<%= cart.total %>" hidden>
+																	<a href="" id="paytm" class="cart-checkout-btn hover-btn">Paytm</a>
+                           
+																</div>
+															</li>
+														</ul>
+													</div>
+													<!-- <div class="form-group return-departure-dts" data-method="cashondelivery">															
+														<div class="row">
+															<div class="col-lg-12">
+																<div class="pymnt_title">
+																	<h4>Cash on Delivery</h4>
+																	<p>Cash on Delivery will not be available if your order value exceeds Rs10.</p>
+																</div>
+															</div>														
+														</div>
+													</div> -->
+													
+													<!-- <button type="submit" class="next-btn16 hover-btn">Place Order</button> -->
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-5">
+						<div class="pdpt-bg mt-0">
+							<div class="pdpt-title">
+								<h4>Order Summary</h4>
+							</div>
+							<%for ( var i=0;i<cart.items.length;i++){%>
+							<div class="right-cart-dt-body">
+								<div class="cart-item border_radius">
+									<div class="cart-product-img">
+										<img src="/uploads/<%=cart.items[i].productId.images[0]%>" alt="">
+										<div class="offer-badge"><%=cart.items[i].productId.discount%>% OFF</div>
+									</div>
+									<div class="cart-text">
+										<h4><%=cart.items[i].productId.productname%></h4>
+										<div class="cart-item-price">Rs<%= cart.items[i].qty*cart.items[i].productId.discountmrp %> <span>Rs<%= cart.items[i].qty*cart.items[i].productId.price %></span></div>
+										<a href="/remove/<%= cart.items[i].productId._id %>" type="button" class="cart-close-btn"><i class="uil uil-multiply"></i></a>
+									</div>		
+								</div>
+							</div>
+
+							<div class="total-checkout-group">
+								<div class="cart-total-dil">
+									<h4>Gambo Super Market</h4>
+									<span>Rs<%= cart.total %></span>
+								</div>
+								<div class="cart-total-dil pt-3">
+									<h4>Delivery Charges</h4>
+									<span>Rs10</span>
+								</div>
+							</div>
+							<div class="cart-total-dil saving-total ">
+								<h4>Total Saving</h4>
+								<span>Rs<%= cart.items[i].productId.discount %>  </span>
+							</div>
+							<div class="main-total-cart">
+								<h2>Total</h2>
+								<span>Rs<%= cart.total %></span>
+							</div>
+							<div class="payment-secure">
+								<i class="uil uil-padlock"></i>Secure checkout
+							</div>
+							<%}%>
+						</div>
+						<!-- <a href="#" class="promo-link45">Have a promocode?</a> -->
+						<div class="checkout-safety-alerts">
+							<p><i class="uil uil-sync"></i>100% Replacement Guarantee</p>
+							<p><i class="uil uil-check-square"></i>100% Genuine Products</p>
+							<p><i class="uil uil-shield-check"></i>Secure Payments</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</div>
+	<!-- Body End -->
+	<script src="/js/jquery-3.3.1.min.js"></script>
+	
+	
+	<script>$(document).ready(function(){
+		var address,price;
+		$('#radio').click(function(){
+			address= $('#address').val()
+			price= $('#price').val()
+			// alert(address+"!")
+			$("#paytm").attr('href','/paytm?price='+price+'&address='+address)
+		})
+
+	})</script>
+	
