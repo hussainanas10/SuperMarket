@@ -2,6 +2,15 @@
 # Gambo Supermarket
 E-commerce website
 # Screenshots
+![image](https://user-images.githubusercontent.com/60548718/98374384-972d1800-2066-11eb-84c8-497446156752.png)
+
+![image](https://user-images.githubusercontent.com/60548718/98374742-21757c00-2067-11eb-9b6b-f014994f127c.png)
+
+- cart and payment section:
+![image](https://user-images.githubusercontent.com/60548718/98374855-4c5fd000-2067-11eb-8606-88d3cbfbf3ba.png)
+
+- admin section
+![image](https://user-images.githubusercontent.com/60548718/98374951-71ecd980-2067-11eb-93f0-721183dd4f96.png)
 
 
 ## Topics Covered
