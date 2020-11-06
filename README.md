@@ -32,11 +32,12 @@ E-commerce website
 ### Setup up dev_keys for database
 - Either run local MongoServer or,
 - Setup Mongo Server at online platform like mlab and Create a db.js file in models folder and set up:-
-`module.exports = {
+
+```module.exports = {
   mongoURI: YOUR_LOCAL_MONGO_SERVER_URI,
 	secretOrKey: YOUR_SECRET
 }; 
-`
+```
 ### Run the application
 - `npm start`
 
