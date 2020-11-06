@@ -1,7 +1,7 @@
 
 # Gambo Supermarket
 E-commerce website
-# Screenshots
+## Screenshots
 ![image](https://user-images.githubusercontent.com/60548718/98374384-972d1800-2066-11eb-84c8-497446156752.png)
 
 ![image](https://user-images.githubusercontent.com/60548718/98374742-21757c00-2067-11eb-9b6b-f014994f127c.png)
